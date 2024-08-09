@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Options</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('logo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Overlay for transparency and blur */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker transparent overlay */
+            backdrop-filter: blur(10px); /* Blur effect */
+            z-index: -1; /* Keep it behind content */
+        }
+
+        .header-container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+        }
+
+        .header-container h1 {
+            color: #336;
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .header-container p {
+            color: #336;
+            font-size: 50px;
+            margin-bottom: 0;
+        }
+
+        .main-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .section {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px;
+            flex-basis: 45%;
+            max-width: 45%;
+            text-align: center;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007BFF;
+        }
+
+        .section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .section p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .section .payment-details {
+            margin-top: 20px;
+        }
+
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-container button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button-container button:hover {
+            background-color: #0056b3;
+        }
+
+        .payment-heading {
+            text-align: left;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .payment-box {
+            border: 2px solid #000;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+            background-color: #F5F5F5;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <div class="header-container">
+        <h1>Payment Options</h1>
+        <p>Choose your preferred payment method for a seamless transaction.</p>
+    </div>
+
+    <div class="main-container">
+        <!-- PayPal Section -->
+        <div class="section">
+            <h2>PayPal Payment</h2>
+            <div class="payment-box">
+                <!-- PayPal SDK Script -->
+                <script src="https://www.paypal.com/sdk/js?client-id=BAAKlbDSKoKinqg3hnGjEj9Mbt_qX4B_czLgfS7U85ULgWZoitvDs4hCgoxKOkRsN7nvgTMyxLpYib3Ibs&components=hosted-buttons&disable-funding=venmo&currency=USD"></script>
+                
+                <!-- PayPal Button Container -->
+                <div id="paypal-container-2Z8YTYLXTAGXA"></div>
+                
+                <!-- PayPal Button Script -->
+                <script>
+                    paypal.HostedButtons({
+                        hostedButtonId: "2Z8YTYLXTAGXA",
+                    }).render("#paypal-container-2Z8YTYLXTAGXA");
+                </script>
+            </div>
+        </div>
+
+        <!-- Esewa Section -->
+        <div class="section">
+            <h2>Esewa Payment</h2>
+            <div class="payment-box">
+                <img src="esewa.jpeg" alt="Esewa QR Code">
+                <div class="payment-details">
+                    <p>Name: Raju Kandel</p>
+                    <p>Id: 977 9846908072</p>
+                    <p>Send screenshot after payment</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
